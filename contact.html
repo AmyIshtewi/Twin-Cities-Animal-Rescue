@@ -38,7 +38,7 @@
     <section>
         <h2>Volunteer and Foster Interest Form</h2>
 
-        <form action="#" method="post">
+        <form action="#" method="post" id="interestForm" novalidate>
 
             <fieldset>
                 <legend>Your Contact Information</legend>
@@ -49,6 +49,7 @@
                            id="name"
                            name="name"
                            required>
+                           <span id="nameError" class="error-message"></span>
                 </p>
 
                 <p>
@@ -57,6 +58,7 @@
                            id="email"
                            name="email"
                            required>
+                           <span id="emailError" class="error-message"></span>
                 </p>
             </fieldset>
 
@@ -74,6 +76,7 @@
                         <option value="foster">Foster</option>
                         <option value="adoption">Adoption Information</option>
                     </select>
+                    <span id="interestError" class="error-message"></span>
                 </p>
 
                 <p>
@@ -83,6 +86,7 @@
                            name="availability"
                            placeholder="Example: Weekends"
                            required>
+                           <span id="availabilityError" class="error-message"></span>
                 </p>
             </fieldset>
 
@@ -101,6 +105,7 @@
                               rows="5"
                               cols="40"
                               required></textarea>
+                              <span id="experienceError" class="error-message"></span>
                 </p>
 
                 <p>
@@ -116,6 +121,7 @@
                               cols="40"
                               maxlength="500"
                               required></textarea>
+                              <span id="messageError" class="error-message"></span>
                 </p>
             </fieldset>
 
@@ -143,11 +149,30 @@
         <p>Sunday: Closed</p>
     </section>
 
+<section class="volunteer-interest">
+    <h2>How Would You Like to Help?</h2>
+    <p>Select the volunteer opportunity that interests you most.</p>
+
+    <label for="volunteerSelect">Volunteer Interest:</label>
+    <select id="volunteerSelect">
+        <option value="">Choose an option</option>
+        <option value="Fostering">Fostering</option>
+        <option value="Adoption Events">Adoption Events</option>
+        <option value="Pet Transport">Pet Transport</option>
+        <option value="General Volunteering">General Volunteering</option>
+    </select>
+
+    <button type="button" id="saveInterest">Save My Interest</button>
+
+    <p id="interestMessage"></p>
+</section>
 </main>
 
 <footer>
     <p>&copy; 2026 Twin Cities Animal Rescue. All rights reserved.</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
